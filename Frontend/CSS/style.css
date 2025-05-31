@@ -1,0 +1,792 @@
+:root {
+    --Fuente-principal: "Montserrat", sans-serif;
+    --Color-azuloscuro: #103e6f;
+    --Color-negro: #000000;
+    --Color-gris: #708090;
+    --Color-grisletra: #3e454d;
+    --Color-azulsecundario: #18509d;
+    --Color-blanco: #ffffff;
+    --Color-fondogris: #dcdee0; 
+    --Color-grisbordes: #e4e4e4;
+    --Color-griscontactos: #9db6be;
+    --Color-azulcontacto: #26739e;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: var(--Fuente-principal);
+}
+
+body {
+    font-size: 16px; /* 1rem = 10px */
+}
+
+/*HEADER*/
+
+.mobile-menu {
+    display: none;
+}
+
+/*--------------QUERYS------------*/
+
+/* Moviles */
+@media (max-width: 600px) {
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .mostrar {
+        display: block;
+        cursor: pointer;
+    }
+
+    img {
+        width: 5rem;
+        cursor: pointer;
+    }
+    .header-total {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header-izq,
+    .header-der {
+        display: flex;
+        gap: 1.5rem;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 1rem;
+    }
+
+    .header-der, .header-izq{
+        display: none;
+    }
+
+    .mostrar{
+        display: flex;
+        animation: fadeIn 0.5s ease-in-out;
+    }   
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .img-medico {
+        display: none;
+    }
+
+    h1, p {
+        color: var(--Color-azuloscuro);
+    }
+    
+    h1 {
+        font-size: 6rem;
+        margin: 0.47em 0;
+    }
+    
+    p {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    .texto-centro {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column  ;
+    }
+
+    .bto-total {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        justify-items: stretch;
+        text-align: center;
+        margin-top: 4rem;
+        max-width: 200rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 2rem;
+    }
+
+    .botones {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        gap: 2rem;
+        background-color: var(--Color-blanco);
+        padding: 4rem 5rem;
+        border: 2px solid var(--Color-grisbordes);
+        border-radius: 2.5rem;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    .bto-total img {
+        width: 4rem;
+        height: auto;
+    }
+
+        /*CENTRADO CON GRID IMG Y TEXTO CON BOTON*/
+    .bto-resturno a {
+        display: inline-block;
+        background-color: var(--Color-azulsecundario);
+        color: var(--Color-blanco);
+        text-decoration: none;
+        padding: 2.5rem 3.5rem;
+        border-radius: 1rem;
+        font-size: 2rem;
+        font-weight: 600;
+        text-align: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .bto-resturno a:hover {
+        background-color: var(--Color-azuloscuro);
+    }
+
+    .bto-resturno {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .formularioresp3 {
+        background-color: var(--Color-grisbordes);
+        width: min(25rem, 100%);
+        margin: 4rem auto;
+        padding: 3rem;
+        border-radius: 1.5rem;
+    }
+
+    .h2-cc {
+        text-align: center;
+        color: var(--Color-azuloscuro);
+        font-size: 5rem;
+    }
+
+    .reg-formulario fieldset {
+        border: none;
+    }
+
+    .campo {
+        margin-bottom: 1rem;
+
+    }
+
+    .campo label {
+        color: var(--Color-negro);
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+
+    .input-clase {
+        width: 100%;
+        padding: 1.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+    }
+
+    .btn-registrarse {
+        background-color: var(--Color-azulsecundario);
+        color: var(--Color-blanco);
+        border: none;
+        border-radius: 0.5rem;
+        padding: 1rem 3rem;
+        font-size: 2rem;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-registrarse:hover {
+        background-color: var(--Color-azuloscuro);
+    }
+
+    .recu-contraseña {
+        margin-top: 2rem;
+
+    }
+
+    .recu-contraseña a {
+        font-size: 1.2rem;
+
+    }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    .header-total {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 3rem 5rem;
+    } 
+
+    .header-izq,
+    .header-der {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+    }
+    .header-der {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    h1, p {
+        color: var(--Color-azuloscuro);
+    }
+    
+    h1 {
+        font-size: 6rem;
+        margin: 0.47em 0;
+    }
+    
+    p {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+
+    .img-centro{
+        display: grid;
+        grid-template-columns:1fr 1fr;
+        align-items: center;
+        gap: 0rem;
+        justify-items: center;
+    }
+
+    .img-medico img {
+        width: 25rem;
+        height: auto;
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 65%, rgba(0, 0, 0, 0) 100%); /* Efecto difuminado */
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 65%, rgba(0, 0, 0, 0) 100%); /*efecto para safari*/
+    }
+
+    
+    .bto-total {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        justify-items: stretch;
+        text-align: center;
+        max-width: 200rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 2rem;
+    }
+
+    .botones {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        position: relative;
+        overflow: hidden;
+        gap: 2rem;
+        background-color: var(--Color-blanco);
+        padding: 4rem 5rem;
+        border: 2px solid var(--Color-grisbordes);
+        border-radius: 2.5rem;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    .bto-total img {
+        width: 8rem;
+        height: auto;
+    }
+
+    /*CENTRADO CON GRID IMG Y TEXTO CON BOTON*/
+    .bto-resturno a {
+        display: inline-block;
+        background-color: var(--Color-azulsecundario);
+        color: var(--Color-blanco);
+        text-decoration: none;
+        padding: 2rem 3rem;
+        border-radius: 1rem;
+        font-weight: 600;
+        text-align: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .bto-resturno a:hover {
+        background-color: var(--Color-azuloscuro);
+    }
+
+    .bto-resturno {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .formularioresp2 {
+        background-color: var(--Color-grisbordes);
+        width: min(50rem, 100%);
+        margin: 4rem auto;
+        padding: 3rem;
+        border-radius: 1.5rem;
+    }
+
+    .h2-cc {
+        text-align: center;
+        color: var(--Color-azuloscuro);
+        font-size: 5rem;
+    }
+
+    .reg-formulario fieldset {
+        border: none;
+    }
+
+    .campo {
+        margin-bottom: 1rem;
+
+    }
+
+    .campo label {
+        color: var(--Color-negro);
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+
+    .input-clase {
+        width: 100%;
+        padding: 1.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+    }
+
+    .btn-registrarse {
+        background-color: var(--Color-azulsecundario);
+        color: var(--Color-blanco);
+        border: none;
+        border-radius: 0.5rem;
+        padding: 1rem 3rem;
+        font-size: 2rem;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-registrarse:hover {
+        background-color: var(--Color-azuloscuro);
+    }
+
+}
+
+/*Escritorio chico (PCs y laptops) */
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+
+    
+    hr {/*ESTE CODIGO ES PARA LA LINEA DEL HEADER*/
+        background-color: var(--Color-gris);
+    }
+
+    .header-izq, .header-der{
+        display: flex;
+        gap: 10rem;
+    }
+
+    .header-total {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3rem 5rem;
+    }
+
+    .img-centro{
+        display: grid;
+        grid-template-columns:1fr 1fr;
+        align-items: center;
+        gap: 20rem;
+        justify-items: center;
+    }
+
+    .img-medico img {
+        width: 50rem;
+        height: auto;
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 65%, rgba(0, 0, 0, 0) 100%); /* Efecto difuminado */
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 65%, rgba(0, 0, 0, 0) 100%); /*efecto para safari*/
+    }
+    
+    .texto-centro {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        padding-left: 12rem;
+        padding-bottom: 15rem;
+    }
+
+    h1, p {
+        color: var(--Color-azuloscuro);
+    }
+    
+    h1 {
+        font-size: 6rem;
+        margin: 0.47em 0;
+    }
+    
+    p {
+        font-size: 2.5rem;
+        font-weight: 400;
+    }
+
+    .bto-total {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 3rem;
+        justify-items: stretch;
+        text-align: center;
+        margin-top: -16rem;
+        max-width: 200rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 2rem;
+    }
+
+    .bto-contacto {
+        margin-top: 4rem;
+    }
+
+    .botones {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        position: relative;
+        overflow: hidden;
+        gap: 2rem;
+        background-color: var(--Color-blanco);
+        padding: 4rem 5rem;
+        border: 2px solid var(--Color-grisbordes);
+        border-radius: 2.5rem;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    .bto-total img {
+        width: 5rem;
+        height: auto;
+    }
+
+    /*CENTRADO CON GRID IMG Y TEXTO CON BOTON*/
+    .bto-resturno a {
+        display: inline-block;
+        background-color: var(--Color-azulsecundario);
+        color: var(--Color-blanco);
+        text-decoration: none;
+        padding: 2.5rem 3.5rem;
+        border-radius: 1rem;
+        font-size: 2rem;
+        font-weight: 600;
+        text-align: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .bto-resturno a:hover {
+        background-color: var(--Color-azuloscuro);
+    }
+
+    .bto-resturno {
+        text-align: center;
+        margin-top: 2rem;  
+    }
+
+    .formularioresp1 {
+        background-color: var(--Color-grisbordes);
+        width: min(60rem, 100%);
+        margin: 0 auto;
+        padding: 3rem;
+        border-radius: 1.5rem;
+    }
+
+    .h2-cc {
+        text-align: center;
+        color: var(--Color-azuloscuro);
+        font-size: 5rem;
+    }
+
+    .reg-formulario fieldset {
+        border: none;
+    }
+
+    .campo {
+        margin-bottom: 1rem;
+
+    }
+
+    .campo label {
+        color: var(--Color-negro);
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+
+    .input-clase {
+        width: 100%;
+        padding: 1.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+    }
+
+    .btn-registrarse {
+        background-color: var(--Color-azulsecundario);
+        color: var(--Color-blanco);
+        border: none;
+        border-radius: 0.5rem;
+        padding: 1rem 3rem;
+        font-size: 2rem;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-registrarse:hover {
+        background-color: var(--Color-azuloscuro);
+    }
+}
+
+/* Escritorio grande (PCs y laptops) */
+@media (min-width: 1201px) {
+
+    hr {/*ESTE CODIGO ES PARA LA LINEA DEL HEADER*/
+        background-color: var(--Color-gris);
+    }
+
+    .header-izq, .header-der{
+        display: flex;
+        gap: 10rem;
+    }
+
+    .header-total {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3rem 5rem;
+    }
+
+    .img-centro{
+        display: grid;
+        grid-template-columns:1fr 1fr;
+        align-items: center;
+        gap: 20rem;
+        justify-items: center;
+    }
+
+    .img-medico img {
+        width: 50rem;
+        height: auto;
+        padding-left: 20rem;
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 65%, rgba(0, 0, 0, 0) 100%); /* Efecto difuminado */
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 65%, rgba(0, 0, 0, 0) 100%); /*efecto para safari*/
+    }
+    
+    .texto-centro {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        padding-left: 12rem;
+        padding-bottom: 15rem;
+    }
+
+    h1, p {
+        color: var(--Color-azuloscuro);
+    }
+    
+    h1 {
+        font-size: 8rem;
+        margin: 0.47em 0;
+    }
+    
+    p {
+        font-size: 3rem;
+        font-weight: 400;
+    }
+
+    .bto-total {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 3rem;
+        justify-items: stretch;
+        text-align: center;
+        margin-top: -15rem;
+        max-width: 200rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0px 3rem 0px 14px;
+    }
+
+    .botones {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        position: relative;
+        overflow: hidden;
+        gap: 2rem;
+        background-color: var(--Color-blanco);
+        padding: 4rem 5rem;
+        border: 2px solid var(--Color-grisbordes);
+        border-radius: 2.5rem;
+        font-size: 3rem;
+        font-weight: 600;
+    }
+
+    .bto-total img {
+        width: 8rem;
+        height: auto;
+    }
+
+    /*CENTRADO CON GRID IMG Y TEXTO CON BOTON*/
+    .bto-resturno a {
+        display: inline-block;
+        background-color: var(--Color-azulsecundario);
+        color: var(--Color-blanco);
+        text-decoration: none;
+        padding: 2.5rem 3.5rem;
+        border-radius: 1rem;
+        font-size: 2rem;
+        font-weight: 600;
+        text-align: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .bto-resturno a:hover {
+        background-color: var(--Color-azuloscuro);
+    }
+
+    .bto-resturno {
+        text-align: center;
+        margin-top: 2rem;
+        
+    }
+
+    .reg-formulario {
+        background-color: var(--Color-grisbordes);
+        width: min(60rem, 100%);
+        margin: 0 auto;
+        padding: 3rem;
+        border-radius: 1.5rem;
+    }
+
+    .h2-cc {
+        text-align: center;
+        color: var(--Color-azuloscuro);
+        font-size: 5rem;
+    }
+
+    .reg-formulario fieldset {
+        border: none;
+    }
+
+    .campo {
+        margin-bottom: 1rem;
+
+    }
+
+    .campo label {
+        color: var(--Color-negro);
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+
+    .input-clase {
+        width: 100%;
+        padding: 1.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+    }
+
+    .btn-registrarse {
+        background-color: var(--Color-azulsecundario);
+        color: var(--Color-blanco);
+        border: none;
+        border-radius: 0.5rem;
+        padding: 1rem 3rem;
+        font-size: 2rem;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-registrarse:hover {
+        background-color: var(--Color-azuloscuro);
+    }
+
+
+    .bto-contacto {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 3rem;
+        justify-items: stretch;
+        text-align: center;
+        margin-top: 5rem;
+        max-width: 200rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0px 3rem 0px 14px;
+    }
+}
+    
+/*------------------------*/
+
+.header-total a {
+    text-decoration: none;
+    color: var(--Color-grisletra);
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+/*centrado de iconos*/
+
+.bto-total a {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--Color-grisletra);
+}
+
+.recu-contraseña {
+    text-align: end;
+}
+
+.recu-contraseña a {
+    text-decoration: none;
+    color: var(--Color-negro);
+    font-weight: 600;
+}
+
+
+/*footer*/
+
+.fin-pag {
+    text-align: center;
+}

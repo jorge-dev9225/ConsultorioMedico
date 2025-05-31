@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Enriqueta:wght@400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <title>Consultorio Medico</title>
+
+</head>
+<body>
+    <header>
+        <div class="mobile-menu">
+            <img src="../Img/menu-ham.svg" alt="menu-ham">
+        </div>
+        <div class="header-total">
+            <nav class="header-izq">
+                <a href="../index.html">Inicio</a>
+                <a href="../Paginas/Turnos.html">Turnos</a>
+                <a href="../Paginas/Contacto.html">Contacto</a>
+            </nav>
+            <nav class="header-der">
+                <a href="../Paginas/Registro.html">Registrarse</a>
+                <a href="../Paginas/Login.html">Iniciar Sesion</a>
+            </nav>
+        </div>
+        <hr>
+    </header>
+
+        <section class="img-centro"> 
+            <div class="texto-centro">
+                <h1>Consultorio <br> Medico</h1>
+                <p>Bienvenido a nuestro consultorio médico, donde brindamos atencion de Calidad para su salud.</p>
+            </div>
+            
+            <div class="img-medico">
+                <img src="../Img/med-sinfondo.png" alt="medico">
+            </div>
+        </section>
+        <main>
+            <section>
+                <h2 class="h2-cc">Iniciar Sesion</h2>
+                <form action="" method="POST" class="reg-formulario formularioresp1 formularioresp2 formularioresp3">
+                    
+                <fieldset>
+                    
+                    <div class="campo">
+                        <label for="usuario">Usuario:</label>
+                        <input type="text" class="input-clase" name="usuario"required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" class="input-clase" name="password" required>
+                    </div>
+
+                </fieldset>
+
+                <button type="submit" class="btn-registrarse">Iniciar Sesion</button>
+                
+                <div class="recu-contraseña">
+                <a href="../Paginas/Recu-contrasena.html">¿Olvidaste tu contraseña?</a>
+                </div>
+                </form>
+            </section>
+    </main>
+
+    <nav class="bto-total bto-contacto">
+        <div class="botones">
+            <a href="../index.html">Inicio</a>
+            <img src="../Img/inicio-img.svg" alt="icono-inicio">
+        </div>
+
+        <div class="botones">
+            <a href="Turnos.html">Turnos</a>
+            <img src="../Img/calendario-img.svg" alt="icono-turnos">
+        </div>
+
+        <div class="botones">
+            <a href="Contacto.html">Contacto</a>
+            <img src="../Img/contacto-img.svg" alt="icono-contacto">
+        </div>
+
+        <div class="botones">
+            <a href="Registro.html">Registrarse</a>
+            <img src="../Img/registro-img.svg" alt="icono-registro">
+        </div>
+    </nav>
+
+    <footer class="fin-pag">
+        <h6>© 2025 JmDesarrollo. Todos los derechos reservados.</h6>
+    </footer>
+
+    <script src="../JS/main.js"></script>
+</body>
+</html>
