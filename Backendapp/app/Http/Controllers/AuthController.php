@@ -12,13 +12,13 @@ class AuthController extends Controller
 {
     //Registra Nuevo medicos o Admins utlizando el Codigo de invitacion
 
-    public function register($request){
+    public function register(Request $request){
         //valida campos recibidos
-        $data = $request->Validate([
+        $data = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|string|min:8|confirmed',
-            'role' => 'required|in:admin,medico',
+            'role' => 'required|in:admin,doctor',
             'invitation_code' => 'required|string',]);
 
     //verifica el codigo de invitacion coincida
@@ -32,7 +32,8 @@ class AuthController extends Controller
         'name' => $data['name'],
         'email' => $data['email'],
         'password' => Hash::make($data['password']),
-        'role' => $data['role'],]);
+        'role' => $data['role'],
+        'invitation_code' => $data['invitation_code']]);
     
     //devuelve una respuesta JSON con la confirmacion de la creacion del usuario    
     return response()->json([
@@ -42,7 +43,7 @@ class AuthController extends Controller
     //Autentica al usuario y retorna un token para futuras peticiones
     public function login(Request $request){
         //valida email y password
-        $credentials = $request->Validate([
+        $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required|string|min:8',]);
     

@@ -11,7 +11,7 @@ class User extends Authenticatable
     use HasApiTokens, Notifiable;
 
     //campos que se almacena masivamente
-    protected $fillable = ['name', 'email', 'password', 'role'];
+    protected $fillable = ['name', 'email', 'password', 'invitation_code', 'role'];
 
     //campos que no deben guardarse en JSON o Arryas
     protected $hidden = ['password', 'remember_token'];
