@@ -14,14 +14,14 @@ class ContactController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:250',
             'phone' => 'nullable|string|max:20',
-            'menssege' => 'required|string|max:1000']);
+            'message' => 'required|string|max:1000']);
 
     //inserta el registro utilizando el modelo contact
     $contact = Contact::create($data);
 
     //retorna JSON confirmando el envio
     return response()->json([
-        'menssege' => 'Mensaje enviado con exito',
+        'message' => 'Mensaje enviado con exito',
         'contact' => $contact], 201);   
 }
 }
