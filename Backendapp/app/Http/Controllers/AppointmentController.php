@@ -32,4 +32,32 @@ class AppointmentController extends Controller
         'menssege' => 'Turno solicitado con exito',
         'appointment' => $appointment,], 201);
     }
+
+    public function confirm($id) {
+        $appointment = Appointment::findOrFail($id);
+        if ($appointment->status !== 'pending'){
+            return response ()-> json([
+                'message' => 'Solo puede confirmar turnos pendientes'
+            ], 400);
+        }
+        $appointment->status = 'confirmed';
+        $appointment->save();
+        return response()->json([
+            'message' => 'Turno confirmado con exito',
+        ]);
+    }
+
+    public function cancel($id) {
+        $appointment = Appointment::findOrFail($id);
+        if ($appointment->status !== 'pending'){
+            return response ()-> json([
+                'message' => 'Solo puede cancelar turnos pendientes'
+            ], 400);
+        }
+        $appointment->status = 'cancelled';
+        $appointment->save();
+        return response()->json([
+            'message' => 'Turno cancelado con exito',
+        ]);
+    }
 }

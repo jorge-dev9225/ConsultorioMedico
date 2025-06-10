@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
     .then(response => {
-        alert("Inicio sesion correctamente ✅");
         loginForm.reset();
+        window.location.href = "http://192.168.1.28:3000/"
     })
     .catch(error => {
         console.error(error);

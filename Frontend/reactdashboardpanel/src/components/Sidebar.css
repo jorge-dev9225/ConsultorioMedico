@@ -1,0 +1,119 @@
+/*.sidebar {
+    background-color: #f4f4f4;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+@media (min-width: 1201px) {
+    .sidebar { width: 250px; }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .sidebar { width: 220px; }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .sidebar { width: 200px; }
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+      display: none;
+    }
+}
+
+.sidebar-nav .nav-item {
+    display: block;
+    margin-bottom: 15px;
+    color: #333333;
+    text-decoration: none;
+    font-weight: 600;
+}*/
+
+/* sidebar.css */
+
+.sidebar {
+    position: fixed;
+    width: 250px;
+    background-color: #103e6f;
+    min-height: 100vh;
+    padding: 20px;
+    color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+  
+.sidebar-title {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    font-weight: bold;
+    color: #ffffff;
+}
+  
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 28px; /* Aumentamos la separación vertical */
+}
+  
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Espacio entre el emoji y el texto */
+    padding: 14px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 10px;
+    color: #cfd8dc;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-item:hover {
+    background-color: #18509d;
+    color: #ffffff;
+  }
+  
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .sidebar {
+      width: 200px;
+      padding: 15px;
+    }
+  
+    .sidebar-title {
+      font-size: 1.5rem;
+    }
+  
+    .nav-item {
+      font-size: 0.95rem;
+      padding: 12px 18px;
+    }
+  
+    .sidebar-nav {
+      gap: 24px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      min-height: unset;
+      padding: 10px;
+    }
+  
+    .sidebar-nav {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 12px;
+    }
+  
+    .nav-item {
+      width: 45%;
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  }
+  
